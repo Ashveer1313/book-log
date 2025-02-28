@@ -108,6 +108,8 @@ book-log/
 - By Rating: Sorted by highest rated books
 - All Books: Complete reading history
 
+## Improvements
+I couldn't get a free working api for biometric authentication to work. It can be added later in future.
 ## Acknowledgements
 1. Firebase
 2. Google Fonts
