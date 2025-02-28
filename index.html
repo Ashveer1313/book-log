@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024, initial-scale=1.0" />
+    <title>Book Log</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="auth-container">
+        <div class="login-header">
+          <img src="public/book_black.png" alt="logo" class="title-logo" />
+          <h2 class="title">Book Log Login</h2>
+        </div>
+        <div class="login-form">
+          <table class="login-table">
+            <tr>
+              <td><label for="email">Email</label></td>
+              <td>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                  class="login-field"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="password">Password</label></td>
+              <td>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                  class="login-field"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="login-buttons">
+          <button id="login" class="button">Login</button>
+          <button id="signup" class="button">Sign Up</button>
+        </div>
+        <div id="auth-status" class="center-text"></div>
+      </div>
+
+      <div id="app-container" style="display: none">
+        <header class="header">
+          <img src="public/book.png" alt="logo" class="image" />
+          <h1 class="title">BOOK LOG</h1>
+          <button class="logoutBtn button" id="logout">
+            <img src="public/logout.png" class="icon" alt="Logout icon" />
+            Logout
+          </button>
+        </header>
+
+        <div class="app-layout" id="app-layout">
+          <div class="left-panel" id="left-panel">
+            <div class="form-container">
+              <form id="book-form">
+                <div class="form-row">
+                  <label for="title">Book Title</label>
+                  <input
+                    type="text"
+                    id="title"
+                    placeholder="Book Title"
+                    required
+                  />
+                </div>
+                <div class="form-row">
+                  <label for="author">Author</label>
+                  <input
+                    type="text"
+                    id="author"
+                    placeholder="Author Name"
+                    required
+                  />
+                </div>
+                <div class="form-row">
+                  <label for="date-finished">Date Finished</label>
+                  <input type="date" id="date-finished" required />
+                </div>
+                <div class="form-row">
+                  <label for="rating">Rating</label>
+                  <select id="rating" required>
+                    <option value="" disabled selected>Select Rating</option>
+                    <option value="5">★★★★★ (5/5)</option>
+                    <option value="4">★★★★☆ (4/5)</option>
+                    <option value="3">★★★☆☆ (3/5)</option>
+                    <option value="2">★★☆☆☆ (2/5)</option>
+                    <option value="1">★☆☆☆☆ (1/5)</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="genre">Genre</label>
+                  <select id="genre" required>
+                    <option value="" disabled selected>Select Genre</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Non-Fiction">Non-Fiction</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Biography">Biography</option>
+                    <option value="History">History</option>
+                    <option value="Science">Science</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="button full-width">
+                    Add Book
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="bot-container">
+              <iframe
+                class="bot-window"
+                src="https://console.dialogflow.com/api-client/demo/embedded/082e3d15-e8e6-4b21-bb57-e5af9a58a540"
+              ></iframe>
+            </div>
+          </div>
+          <div id="toggle-left-panel" class="toggle-panel-btn">
+            <span class="toggle-icon">◀</span>
+          </div>
+          <div class="right-panel">
+            <div class="filters">
+              <button id="filter-recent" class="button">Recent</button>
+              <button id="filter-genre" class="button">By Genre</button>
+              <button id="filter-rating" class="button">By Rating</button>
+              <button id="filter-all" class="button">All Books</button>
+            </div>
+            <div id="book-list-container">
+              <div id="book-list" class="book-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
