@@ -113,7 +113,7 @@ function filterBooks(books, filterType) {
 
     case "genre":
       // Group by genre without additional filtering
-      return  books.sort((a, b) => a.genre.localeCompare(b.genre));;
+      return books.sort((a, b) => a.genre.localeCompare(b.genre));
 
     case "rating":
       // Sort by rating in descending order
@@ -125,104 +125,6 @@ function filterBooks(books, filterType) {
   }
 }
 
-// Render books grouped by genre
-// function renderBooksGrouped(snapshot, filterType = "all") {
-//   const genres = {};
-
-//   const books = snapshot.docs.map((docSnapshot) => ({
-//     id: docSnapshot.id,
-//     ...docSnapshot.data(),
-//   }));
-//   const filteredBooks = filterBooks(books, filterType);
-
-//   filteredBooks.forEach((book) => {
-//     if (!genres[book.genre]) {
-//       genres[book.genre] = { books: [], count: 0 };
-//     }
-//     genres[book.genre].books.push(book);
-//     genres[book.genre].count++;
-//   });
-
-//   bookList.innerHTML = "";
-
-//   for (const [genre, { books, count }] of Object.entries(genres)) {
-//     const genreDiv = document.createElement("div");
-//     const genreTitle = document.createElement("h2");
-//     genreTitle.textContent = `${genre} - ${count} book(s)`;
-//     genreDiv.appendChild(genreTitle);
-
-//     books.forEach((book) => {
-//       const li = document.createElement("li");
-//       const titleSpan = document.createElement("span");
-//       const authorSpan = document.createElement("span");
-//       const dateSpan = document.createElement("span");
-//       const ratingSpan = document.createElement("span");
-//       const delBtn = document.createElement("button");
-//       const editBtn = document.createElement("button");
-
-//       titleSpan.textContent = `Title: ${book.title}`;
-//       titleSpan.classList.add('fixed-width');
-//       authorSpan.textContent = `Author: ${book.author}`;
-//       authorSpan.classList.add('fixed-width');
-//       dateSpan.textContent = `Finished: ${book.dateFinished}`;
-//       dateSpan.classList.add('fixed-width');
-//       ratingSpan.textContent = `Rating: ${'★'.repeat(book.rating)}${'☆'.repeat(5-book.rating)}`;
-//       ratingSpan.classList.add('fixed-width');
-
-//       delBtn.textContent = "Delete";
-//       delBtn.style.backgroundColor = "#ff0000";
-//       delBtn.style.border = "none";
-//       delBtn.style.color = "white";
-//       delBtn.style.padding = "10px 20px";
-//       delBtn.style.borderRadius = "4px";
-//       delBtn.classList.add('del-btn');
-
-//       editBtn.textContent = "Edit";
-//       editBtn.style.backgroundColor = "#2c3e50";
-//       editBtn.style.border = "none";
-//       editBtn.style.color = "white";
-//       editBtn.style.padding = "10px 20px";
-//       editBtn.style.borderRadius = "4px";
-
-//       li.appendChild(titleSpan);
-//       li.appendChild(authorSpan);
-//       li.appendChild(dateSpan);
-//       li.appendChild(ratingSpan);
-//       li.appendChild(delBtn);
-//       li.appendChild(editBtn);
-
-//       genreDiv.appendChild(li);
-
-//       // Delete book with confirmation
-//       delBtn.addEventListener("click", async (e) => {
-//         e.stopPropagation();
-//         const confirmDelete = confirm(
-//           "Are you sure you want to delete this book?"
-//         );
-//         if (confirmDelete) {
-//           try {
-//             const docRef = doc(db, "books", book.id);
-//             await deleteDoc(docRef);
-//           } catch (error) {
-//             console.error("Error removing book: ", error);
-//           }
-//         }
-//       });
-
-//       // Edit book
-//       editBtn.addEventListener("click", () => {
-//         document.getElementById("title").value = book.title;
-//         document.getElementById("author").value = book.author;
-//         document.getElementById("date-finished").value = book.dateFinished;
-//         document.getElementById("rating").value = book.rating;
-//         document.getElementById("genre").value = book.genre;
-//         currentEditId = book.id;
-//       });
-//     });
-
-//     bookList.appendChild(genreDiv);
-//   }
-// }
 
 function renderBooksGrouped(snapshot, filterType = "all") {
   const books = snapshot.docs.map((docSnapshot) => ({
@@ -277,7 +179,7 @@ function renderBooksGrouped(snapshot, filterType = "all") {
       ratingSpan.classList.add("fixed-width");
 
       delBtn.textContent = "Delete";
-      delBtn.style.backgroundColor = "#ff0000";
+      delBtn.style.backgroundColor = "#803C00";
       delBtn.style.border = "none";
       delBtn.style.color = "white";
       delBtn.style.padding = "10px 20px";
@@ -456,6 +358,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Toggle icon
     const icon = togglePanelBtn.querySelector(".toggle-icon");
     icon.textContent = leftPanel.classList.contains("collapsed") ? "▶" : "◀";
-    console.log("Clicked");
   });
 });
+
