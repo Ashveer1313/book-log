@@ -7,45 +7,38 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
   </head>
+
   <body>
     <div class="container">
       <div id="auth-container">
         <div class="login-header">
-          <img src="public/book_black.png" alt="logo" class="title-logo" />
+          <img src="public/book_black.png" alt="main-logo" class="title-logo" />
           <h2 class="title">Book Log Login</h2>
         </div>
-        <div class="login-form">
-          <table class="login-table">
-            <tr>
-              <td><label for="email">Email</label></td>
-              <td>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Email"
-                  required
-                  class="login-field"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="password">Password</label></td>
-              <td>
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Password"
-                  required
-                  class="login-field"
-                />
-              </td>
-            </tr>
-          </table>
+        <div class="login-from-container">
+          <div class="login-form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+                class="login-field"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+                class="login-field"
+              />
+            </div>
+          </div>
         </div>
         <div class="login-buttons">
           <button id="login" class="button">Login</button>
@@ -56,7 +49,7 @@
 
       <div id="app-container" style="display: none">
         <header class="header">
-          <img src="public/book.png" alt="logo" class="image" />
+          <img src="public/book.png" alt="main-logo" class="image" />
           <h1 class="title">BOOK LOG</h1>
           <button class="logoutBtn button" id="logout">
             <img src="public/logout.png" class="icon" alt="Logout icon" />
@@ -122,12 +115,6 @@
                 </div>
               </form>
             </div>
-            <div class="bot-container">
-              <iframe
-                class="bot-window"
-                src="https://console.dialogflow.com/api-client/demo/embedded/082e3d15-e8e6-4b21-bb57-e5af9a58a540"
-              ></iframe>
-            </div>
           </div>
           <div id="toggle-left-panel" class="toggle-panel-btn">
             <span class="toggle-icon">◀</span>
@@ -146,6 +133,15 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      chat-icon="https:&#x2F;&#x2F;static.vecteezy.com&#x2F;system&#x2F;resources&#x2F;thumbnails&#x2F;044&#x2F;280&#x2F;984&#x2F;small_2x&#x2F;stack-of-books-on-a-brown-background-concept-for-world-book-day-photo.jpg"
+      intent="WELCOME"
+      chat-title="Book_Log"
+      agent-id="082e3d15-e8e6-4b21-bb57-e5af9a58a540"
+      language-code="en"
+      id="chat-bot"
+    ></df-messenger>
     <script type="module" src="script.js"></script>
   </body>
 </html>
