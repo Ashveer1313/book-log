@@ -361,3 +361,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+window.addEventListener('load', () => {
+  const chatbotImages = document.querySelectorAll('.df-chat-icon');
+  chatbotImages.forEach(img => {
+    if (!img.hasAttribute('alt')) {
+      img.setAttribute('alt', 'Dialogflow Chatbot Interface');
+    }
+  });
+});
