@@ -3,7 +3,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "PT Serif", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #ecf0f1;
 }
 
@@ -178,12 +178,29 @@ body {
 
 .login-form {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 1rem; /* Space between form groups */
+  width: 30%;
 }
 
-.login-table {
-  width: 300px;
+.login-form {
+  display: grid;
+  gap: 1rem;
+}
+.login-from-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-group {
+  display: grid;
+  grid-template-columns: 80px 1fr; /* Fixed width for labels, remaining space for inputs */
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-field {
+  flex: 1; /* Makes input take remaining space */
 }
 
 .login-buttons {
@@ -255,7 +272,7 @@ body {
   color: rgb(0, 0, 0);
 }
 .filters .button.active {
-  background-color: #000000; 
+  background-color: #000000;
   color: white;
   font-weight: bold;
 }
